@@ -9,52 +9,56 @@ while True:
         continue
     while True:
         opcao = input("Escolhar a operação que deseja(+, -, *, /) ou escolha outro número\n")
-        if opcao == 'done':
-            quit()
-        elif opcao.isdigit():
+        if opcao.isdigit():
             numPrincipal = float(opcao)
             print(numPrincipal)
-        elif opcao == '+':
-            numSecundario = input()
-            if numSecundario == 'done':
+            continue
+        match opcao:
+            case 'done':
                 quit()
-            try:
-                numSecundario = float(numSecundario)
-            except:
+            case '+':
+                numSecundario = input()
+                if numSecundario == 'done':
+                    quit()
+                try:
+                    numSecundario = float(numSecundario)
+                except:
+                    print("Digito Inválido")
+                    continue
+                numPrincipal += numSecundario
+                print(numPrincipal)
+            case '-':
+                numSecundario = input()
+                if numSecundario == 'done':
+                    quit()
+                try:
+                    numSecundario = float(numSecundario)
+                except:
+                    print("Digito Inválido")
+                    continue
+                numPrincipal -= numSecundario
+                print(numPrincipal)
+            case '*':
+                numSecundario = input()
+                if numSecundario == 'done':
+                    quit()
+                try:
+                    numSecundario = float(numSecundario)
+                except:
+                    print("Digito Inválido")
+                    continue
+                numPrincipal *= numSecundario
+                print(numPrincipal)
+            case '/':
+                numSecundario = input()
+                if numSecundario == 'done':
+                    quit()
+                try:
+                    numSecundario = float(numSecundario)
+                except:
+                    print("Digito Inválido")
+                    continue
+                numPrincipal /= numSecundario
+                print(numPrincipal)
+            case _:
                 print("Digito Inválido")
-                continue
-            numPrincipal += numSecundario
-            print(numPrincipal)
-        elif opcao == '-':
-            numSecundario = input()
-            if numSecundario == 'done':
-                quit()
-            try:
-                numSecundario = float(numSecundario)
-            except:
-                print("Digito Inválido")
-                continue
-            numPrincipal -= numSecundario
-            print(numPrincipal)
-        elif opcao == '*':
-            numSecundario = input()
-            if numSecundario == 'done':
-                quit()
-            try:
-                numSecundario = float(numSecundario)
-            except:
-                print("Digito Inválido")
-                continue
-            numPrincipal *= numSecundario
-            print(numPrincipal)
-        elif opcao == '/':
-            numSecundario = input()
-            if numSecundario == 'done':
-                quit()
-            try:
-                numSecundario = float(numSecundario)
-            except:
-                print("Digito Inválido")
-                continue
-            numPrincipal /= numSecundario
-            print(numPrincipal)
